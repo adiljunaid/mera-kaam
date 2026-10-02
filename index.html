@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Mera Kaam - Citizen Services</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#116530">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="nav nav-left">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+        </div>
+
+        <a href="#home" class="logo">
+            ✓ MERA KAAM
+        </a>
+
+        <div class="nav nav-right">
+            <a href="#about">About</a>
+            <a href="#services">All Services</a>
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                🇵🇰 Citizen Services Platform
+            </div>
+
+            <h1>
+                Get Your Work<br>
+                <span>Done Easily</span>
+            </h1>
+
+            <p>
+                Find government services, requirements,
+                application information and official sources
+                in one place.
+            </p>
+
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <input type="text" id="searchInput" placeholder="Search a service... e.g. Domicile"
+                    onkeypress="handleEnter(event)">
+
+                <button onclick="searchService()">
+                    🔍 Search
+                </button>
+
+            </div>
+
+
+            <!-- Popular Searches -->
+
+            <div class="popular">
+
+                <span>Popular:</span>
+
+                <button onclick="openService('domicile')">
+                    Domicile
+                </button>
+
+                <button onclick="openService('birth')">
+                    Birth Certificate
+                </button>
+
+                <button onclick="openService('jobs')">
+                    Jobs
+                </button>
+
+                <button onclick="openService('vehicle')">
+                    Vehicle
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH RESULT ================= -->
+
+    <section id="searchResultSection" class="search-result-section">
+
+        <div class="container">
+
+            <div id="searchResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICES ================= -->
+
+    <section class="services-section" id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>OUR SERVICES</span>
+
+                <h2>
+                    What Do You Need?
+                </h2>
+
+                <p>
+                    Select a service to see requirements,
+                    steps and official links.
+                </p>
+
+            </div>
+
+
+            <div class="services-grid">
+
+
+                <!-- Domicile -->
+
+                <div class="service-card" onclick="openService('domicile')">
+
+                    <div class="service-icon green">
+                        🏠
+                    </div>
+
+                    <h3>Domicile</h3>
+
+                    <p>
+                        Apply for domicile and check
+                        requirements.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Birth -->
+
+                <div class="service-card" onclick="openService('birth')">
+
+                    <div class="service-icon blue">
+                        👶
+                    </div>
+
+                    <h3>Birth Certificate</h3>
+
+                    <p>
+                        Information about birth certificate
+                        registration.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Death -->
+
+                <div class="service-card" onclick="openService('death')">
+
+                    <div class="service-icon purple">
+                        ⚰️
+                    </div>
+
+                    <h3>Death Certificate</h3>
+
+                    <p>
+                        Requirements and information for
+                        death certificate.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Marriage -->
+
+                <div class="service-card" onclick="openService('marriage')">
+
+                    <div class="service-icon pink">
+                        💍
+                    </div>
+
+                    <h3>Marriage Certificate</h3>
+
+                    <p>
+                        Learn about marriage certificate
+                        registration.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Divorce -->
+
+                <div class="service-card" onclick="openService('divorce')">
+
+                    <div class="service-icon orange">
+                        📄
+                    </div>
+
+                    <h3>Divorce Certificate</h3>
+
+                    <p>
+                        Information about divorce
+                        certificate services.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Vehicle -->
+
+                <div class="service-card" onclick="openService('vehicle')">
+
+                    <div class="service-icon yellow">
+                        🚗
+                    </div>
+
+                    <h3>Vehicle Services</h3>
+
+                    <p>
+                        Vehicle registration, transfer and
+                        verification.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Jobs -->
+
+                <div class="service-card" onclick="openService('jobs')">
+
+                    <div class="service-icon red">
+                        💼
+                    </div>
+
+                    <h3>Government Jobs</h3>
+
+                    <p>
+                        Find KP government job information
+                        and official portals.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Education -->
+
+                <div class="service-card" onclick="openService('education')">
+
+                    <div class="service-icon blue">
+                        🎓
+                    </div>
+
+                    <h3>Education</h3>
+
+                    <p>
+                        Find education departments and
+                        useful official resources.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Health -->
+
+                <div class="service-card" onclick="openService('health')">
+
+                    <div class="service-icon green">
+                        🏥
+                    </div>
+
+                    <h3>Health</h3>
+
+                    <p>
+                        Find KP health departments and
+                        official information.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Complaints -->
+
+                <div class="service-card" onclick="openService('complaints')">
+
+                    <div class="service-icon red">
+                        📢
+                    </div>
+
+                    <h3>Complaints</h3>
+
+                    <p>
+                        Find official complaint and
+                        grievance services.
+                    </p>
+
+                    <span class="service-link">
+                        View Details →
+                    </span>
+
+                </div>
+
+
+                <!-- Office Finder -->
+
+                <div class="service-card" onclick="showOfficeFinder()">
+
+                    <div class="service-icon teal">
+                        📍
+                    </div>
+
+                    <h3>Office Finder</h3>
+
+                    <p>
+                        Find citizen facilitation offices
+                        by city.
+                    </p>
+
+                    <span class="service-link">
+                        Find Office →
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= QUICK INFO ================= -->
+
+    <section class="quick-info">
+
+        <div class="container">
+
+            <div class="quick-grid">
+
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+                        🔍
+                    </div>
+
+                    <h3>Search Easily</h3>
+
+                    <p>
+                        Search the service you need
+                        quickly.
+                    </p>
+
+                </div>
+
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+                        📋
+                    </div>
+
+                    <h3>Know Requirements</h3>
+
+                    <p>
+                        Understand documents and
+                        basic requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="quick-card">
+
+                    <div class="quick-icon">
+                        🔗
+                    </div>
+
+                    <h3>Official Sources</h3>
+
+                    <p>
+                        Access official government
+                        websites.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SERVICE DETAILS ================= -->
+
+    <section id="serviceDetails" class="service-details-section">
+
+        <div class="container">
+
+            <button class="back-button" onclick="goBack()">
+                ← Back to Services
+            </button>
+
+            <div id="serviceDetailsContent"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= OFFICE FINDER ================= -->
+
+    <section id="office-section" class="office-section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>OFFICE FINDER</span>
+
+                <h2>
+                    Find a Citizen Facilitation Office
+                </h2>
+
+                <p>
+                    Select your city to find office
+                    information.
+                </p>
+
+            </div>
+
+
+            <div class="office-search">
+
+                <select id="citySelect">
+
+                    <option value="">
+                        Select City
+                    </option>
+
+                    <option value="peshawar">
+                        Peshawar
+                    </option>
+
+                    <option value="mardan">
+                        Mardan
+                    </option>
+
+                    <option value="swat">
+                        Swat
+                    </option>
+
+                    <option value="abbottabad">
+                        Abbottabad
+                    </option>
+
+                </select>
+
+
+                <button onclick="findOffice()">
+                    🔍 Find Office
+                </button>
+
+            </div>
+
+
+            <div id="officeResult"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about-section" id="about">
+
+        <div class="container">
+
+            <div class="about-content">
+
+                <div class="about-text">
+
+                    <span>ABOUT MERA KAAM</span>
+
+                    <h2>
+                        Making Citizen Services Easier
+                    </h2>
+
+                    <p>
+                        Mera Kaam is a simple information
+                        platform designed to help citizens
+                        understand government services.
+                    </p>
+
+                    <p>
+                        Our goal is to make it easier to
+                        find requirements, procedures and
+                        official sources in one place.
+                    </p>
+
+                    <div class="important-box">
+
+                        <strong>
+                            ⚠️ Important
+                        </strong>
+
+                        <p>
+                            Mera Kaam is an information
+                            platform. Always verify important
+                            information through the relevant
+                            official government department
+                            before submitting an application
+                            or paying any fee.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div>
+
+                    <h3>
+                        ✓ MERA KAAM
+                    </h3>
+
+                    <p>
+                        Simple access to citizen services.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        © 2026 Mera Kaam
+                    </p>
+
+                    <p>
+                        Citizen Services Information Platform
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="script.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("sw.js")
+                    .then(() => {
+                        console.log("Mera Kaam App Ready");
+                    })
+                    .catch(error => {
+                        console.log("Service Worker Error:", error);
+                    });
+            });
+        }
+    </script>
+
+</body>
+
+</html>
